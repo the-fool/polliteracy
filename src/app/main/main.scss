@@ -10,12 +10,25 @@
     }
 
     .content {
+        max-width: 1200px;
 
         md-content {
             background-color: transparent;
         }
     }
 
+    .extra-sidebar {
+        padding: 8px 8px 8px 32px;
+
+
+        .groups {
+
+            .content {
+
+
+            }
+        }
+    }
 
     .blurb-box {
         margin-bottom: 16px;
@@ -71,6 +84,10 @@
 @media screen and (max-width: $layout-breakpoint-sm) {
 
     .content-page {
+
+        .extra-sidebar {
+            padding: 8px;
+        }
 
         .header {
 
