@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('fuse')
+        .module('polliteracy')
         .controller('MainController', MainController);
 
     /** @ngInject */

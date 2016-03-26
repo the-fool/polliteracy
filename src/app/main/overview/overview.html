@@ -1,0 +1,33 @@
+<div id="overview" class="page-layout simple tabbed content-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" flex>
+
+        <md-tabs md-dynamic-height>
+            <md-tab label="Introduction">
+                <md-content class="introduction-tab"
+                            ng-include="'app/main/overview/tabs/introduction/introduction.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Objectives">
+                <md-content class="objectives-tab"
+                            ng-include="'app/main/overview/tabs/objectives/objectives.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Outline">
+                <md-content class="outline-tab"
+                            ng-include="'app/main/overview/tabs/outline/outline.html'">
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

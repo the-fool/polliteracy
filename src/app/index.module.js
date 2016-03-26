@@ -3,10 +3,10 @@
     'use strict';
 
     /**
-     * Main module of the Fuse
+     * Main module of the polliteracy
      */
     angular
-        .module('fuse', [
+        .module('polliteracy', [
 
             // Core
             'app.core',
@@ -20,7 +20,7 @@
             // Quick panel
             'app.quick-panel',
 
-            // Sample
-            'app.sample'
+            // Overview
+            'app.overview'
         ]);
 })();

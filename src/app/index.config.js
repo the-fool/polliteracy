@@ -3,13 +3,18 @@
     'use strict';
 
     angular
-        .module('fuse')
+        .module('polliteracy')
         .config(config);
 
     /** @ngInject */
-    function config()
+    function config(msNavigationServiceProvider)
     {
-        // Put your custom configurations here
+      // Navigation
+      msNavigationServiceProvider.saveItem('polliteracy', {
+          title : 'CHAPTERS',
+          group : true,
+          weight: 1
+      });
     }
 
 })();

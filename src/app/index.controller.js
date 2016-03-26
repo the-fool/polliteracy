@@ -3,16 +3,14 @@
     'use strict';
 
     angular
-        .module('fuse')
+        .module('polliteracy')
         .controller('IndexController', IndexController);
 
     /** @ngInject */
-    function IndexController(fuseTheming)
+    function IndexController()
     {
         var vm = this;
 
-        // Data
-        vm.themes = fuseTheming.themes;
 
         //////////
     }
