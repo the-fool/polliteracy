@@ -28,5 +28,26 @@
             state    : 'app.overview',
             weight   : 1
         });
+
+        /*msNavigationServiceProvider.saveItem('polliteracy.overview.introduction', {
+            title    : 'Introduction',
+            icon     : 'icon-tile-four',
+            state    : 'app.overview',
+            class    : 'subnav',
+            stateParams : {
+              'activeTab' : 'introduction'
+            },
+            weight   : 1
+        });
+        msNavigationServiceProvider.saveItem('polliteracy.overview.objectives', {
+            title    : 'Introduction',
+            icon     : 'icon-tile-four',
+            state    : 'app.overview_objectives',
+            stateParams : {
+              'activeTab' : 'objectives'
+            },
+            weight   : 1,
+            class    : 'subnav'
+        });*/
     }
 })();
