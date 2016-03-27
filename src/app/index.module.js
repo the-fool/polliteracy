@@ -21,6 +21,9 @@
             'app.quick-panel',
 
             // Overview
-            'app.overview'
+            'app.overview',
+
+            // Unit 1
+            'app.methods'
         ]);
 })();

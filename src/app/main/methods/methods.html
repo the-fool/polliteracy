@@ -1,0 +1,33 @@
+<div id="methods" class="page-layout simple tabbed content-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+      <div class="name">Polling Methods</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" flex>
+
+        <md-tabs md-dynamic-height>
+            <md-tab label="Sample Size">
+                <md-content class="sheer-size-tab"
+                            ng-include="'app/main/methods/tabs/sample-size/sample-size.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Literary Digest">
+                <md-content class="literary-digest-1-tab"
+                            ng-include="'app/main/methods/tabs/literary-digest/literary-digest.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Quality & Quantity">
+                <md-content class="quality-quantity-tab"
+                            ng-include="'app/main/methods/tabs/quality-quantity/quality-quantity.html'">
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>
