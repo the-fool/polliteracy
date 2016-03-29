@@ -10,6 +10,11 @@
     <div class="content" flex>
 
         <md-tabs md-dynamic-height>
+            <md-tab label="Objectives">
+              <md-content class="objective-tab"
+                ng-include="'app/main/methods/tabs/objectives/objectives.html'">
+              </md-content>
+            </md-tab>
             <md-tab label="Sample Size">
                 <md-content class="sheer-size-tab"
                             ng-include="'app/main/methods/tabs/sample-size/sample-size.html'">
