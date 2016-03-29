@@ -137,19 +137,34 @@
       </ms-widget-front>
   <!-- / Front -->
 
-  <!-- Back -->
-  <ms-widget-back class="p-16 deep-purple-bg white-fg">
-    <div class="flip-to-front">
-      <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
-        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
-      </md-button>
-    </div>
+    <!-- Back -->
+    <ms-widget-back class="p-16 deep-purple-bg white-fg">
+      <div class="flip-to-front">
+        <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+          <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+        </md-button>
+      </div>
 
-    <div>
-      {{vm.widget4.detail}}
-    </div>
-  </ms-widget-back>
-  <!-- / Back -->
+      <div layout="column" class="md-subhead pt-20" layout-align="space-around start">
+        <p >
+          Are these sample sizes less than you thought they would be?
+        </p>
+        <p>
+          In each case they are only one-thousand.  But, truth be told, good polls
+          often have less than one-thousand.
+        </p>
+        <p>
+          Also, note that it does not matter whether the population is ten-million
+          or one-million.  In fact, the simple size of population is not the important
+          factor when determining the size of a poll sample!  The listed percentage for
+          each sample size was meant to be a red herring.
+        </p>
+        <p>
+          We will explain why this is the case in coming modules.
+        </p>
+      </div>
+    </ms-widget-back>
+    <!-- / Back -->
 
   </ms-widget>
   <!-- / QUIZ -->
