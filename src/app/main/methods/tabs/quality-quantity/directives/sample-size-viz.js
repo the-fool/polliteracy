@@ -24,26 +24,38 @@
     function compile(tElement)
     {
 
-      var width = 600,
-          height = 600,
-          defaultExtent = [[width/3, height/3], [2*width/3, 2*height/3]];
-
-      var data = d3.range(5).map(function() {
-        return [Math.random() * width, Math.random() * height];
-      });
-
-      var quadtree = d3.geom.quadtree()
-        .extent([[-1,-1], [width+1, height + 1]])
-        (data);
-
-      var x = d3.scale.identity().domain([0, width]),
-          y = d3.scale.identity().domain([0, height]);
 
 
       return postlink;
 
       function postlink(scope, element, attrs)
       {
+        var margin = {top: 30, right: 20, bottom: 30, left: 20}
+          , width = document.getElementsByClassName('main-page-content')[0].offsetWidth
+          , width = width - margin.left - margin.right
+          , height = 600
+          , defaultExtent = [[width/3, height/3], [2*width/3, 2*height/3]];
+
+        var data = d3.range(5000).map(function() {
+          return [Math.random() * width, Math.random() * height];
+        });
+
+        var quadtree = d3.geom.quadtree()
+          .extent([[-1,-1], [width+1, height + 1]])
+          (data);
+
+        var x = d3.scale.identity().domain([0, width]),
+            y = d3.scale.identity().domain([0, height]);
+
+        /* Responsivitiy -- not easy
+        d3.select(window).on('resize', resize);
+        function resize() {
+          width = document.getElementsByClassName('main-page-content')[0].offsetWidth;
+          width = width - margin.left - margin.right;
+          x.range([0,width]);
+          // TODO
+        }*/
+
         draw();
 
         function draw()

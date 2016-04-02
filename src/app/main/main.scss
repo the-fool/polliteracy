@@ -1,3 +1,4 @@
+
 .content-page {
 
     .header {
@@ -15,7 +16,11 @@
             background-color: transparent;
         }
     }
+    .main-page-content {
+      max-width: 800px;
+      width: 65%;
 
+    }
     .extra-sidebar {
         padding: 8px 8px 8px 32px;
 
