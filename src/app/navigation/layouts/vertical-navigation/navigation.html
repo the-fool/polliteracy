@@ -2,9 +2,12 @@
     <div class="logo" layout="row" layout-align="start center">
         <span class="logo-image">eL</span>
         <span class="logo-text">Polliteracy</span>
+        <md-progress-circular id="toolbar-progress" ng-show="vm.root.loadingProgress" class="md-accent"
+                              md-mode="indeterminate" md-diameter="64">
+
+        </md-progress-circular>
     </div>
 
-    
 </md-toolbar>
 
 <ms-navigation class="scrollable" folded="vm.folded" ms-scroll="vm.msScrollOptions"></ms-navigation>

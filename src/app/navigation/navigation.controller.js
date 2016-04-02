@@ -7,7 +7,7 @@
         .controller('NavigationController', NavigationController);
 
     /** @ngInject */
-    function NavigationController($scope)
+    function NavigationController($scope, $rootScope)
     {
         var vm = this;
 
@@ -17,7 +17,7 @@
         vm.msScrollOptions = {
             suppressScrollX: true
         };
-
+        vm.root = $rootScope;
         // Methods
         vm.toggleMsNavigationFolded = toggleMsNavigationFolded;
 
