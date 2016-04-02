@@ -19,8 +19,9 @@
     function sampleSizeController()
     {
       var vm = this;
+      vm.selected = [];
       vm.numSelected = 0;
-
+      vm.populationSize = 7000;
     }
 
     function compile(tElement)
@@ -47,12 +48,12 @@
             , width = width - margin.left - margin.right
             , height = 600
             , defaultExtent = [[width/3, height/3], [2*width/3, 2*height/3]];
-          data = d3.range(5000).map(function(value) {
+          data = d3.range(scope.vm.populationSize).map(function(value) {
               var ret = [Math.random() * width, Math.random() * height];
               ret.type = value % 2 ? "red" : "blue";
               return ret;
           });
-          console.log(data);
+
           quadtree = d3.geom.quadtree()
             .extent([[-1,-1], [width+1, height + 1]])
             (data);
@@ -83,10 +84,10 @@
             var extent = brush.extent();
             point.each(function(d) { d.selected = false; });
             scope.$apply(function() {
-              scope.vm.numSelected = 0;
+              scope.vm.selected.length = 0;
               search(quadtree, extent[0][0], extent[0][1], extent[1][0], extent[1][1]);
               point.classed("selected", function(d) {
-                if (d.selected) scope.vm.numSelected++;
+                if (d.selected) scope.vm.selected.push(d);
                 return d.selected;
               });
             });

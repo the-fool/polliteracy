@@ -1,5 +1,4 @@
-<div id="sample-size-header" class="p-16 md-headline"
-      layout="row" layout-align="space-around center">
-  <span class="sample-size-selected" flex>{{vm.numSelected}} selected</span>
-  <span class="sample-mean" flex>{{vm.selectedMean}} sampled</span>
+<div id="sample-size-header" class="p-16 md-headline">
+  <p class="sample-size-selected" >{{vm.selected.length}} ({{vm.selected.length | selectionPercent:vm.populationSize}}) selected</p>
+  <p class="sample-mean" >Red-to-Blue sample ratio: {{vm.selected | proportion}}</p>
 </div>
