@@ -1,41 +1,47 @@
-<div layout="column" layout-gt-sm="row" >
+<div layout="column"  class="quality-quantity" layout-gt-sm="row"
+    ng-controller="QualityQuantityController as tabCtrl">
 
-  <div  class="sample-size" layout="column" flex="100"
-    flex-gt-md="65"
-  ng-controller="LiteraryDigestController as tabCtrl">
+  <div class="main-page-content" flex="100" flex-gt-md="65">
     <div class="blurb-box general md-whiteframe-1dp">
       <header class="md-accent-bg md-hue-1">
-        <div class="title">Are Big Polls Always Good Polls?</div>
+        <div class="title">Sample Size and Sample Bias</div>
       </header>
 
       <div class="content">
         <p>
-          In the presidential election of 1936, the incumbent Franklin Delano Roosevelt
-          was challenged by the Republican governor Alfred Landon.  At that time,
-          a popular magazine <em>The Literary Digest</em> had the reputation of
-          conducting large-scale public opinion polls.  Over the years it had put
-          together a list of people to poll through collecting information from
-          phonebooks, magazine subscriptions, automobile registrations, and
-          various club roster lists.
-          By the time <em>The Literary Digest</em> was ready to poll the nation about the
-          1936 election, its list of contact information exceeded <strong>eleven-million</strong>
-          entries!
+          Was it just bad luck that <em>The Literary Digest</em> predicted
+          extremely inaccurate results?  Sometimes it is just a matter of luck --
+          but not so here.  The reason <em>The Literary Digest</em> was wrong
+          is that same for why Gallup's poll was correct.  The issue at stake here
+          is what we term <strong>sample bias</strong>.
         </p>
         <p>
-          And so the magazine mailed over ten-million questionnaires around the
-          country.  Everyone who received this in the mail was asked to mark
-          their intention to vote for either Roosevelt or Landon, and then mail
-          it back to <em>The Literary Digest</em> headquarters. As you would guess,
-          many people did not bother the trouble or the postage to return their
-          survey -- but those who did numbered over 2,300,000!  This poll became
-          one of the largest in history.
+          A sample is biased if it leans in one direction, favoring certain results,
+          rather than representing a genuinely <em>random</em> (or unbiased)
+          segment of the population.  If a poll sample only gets responses
+          from a specific <strong>type</strong> of member of some population,
+          it does not matter whether the sample size is one-thousand or one-million
+          -- in either case the sample will be unrepresentative of the population
+          as a whole.
         </p>
         <p>
-          The results were published a month before the election: Landon would win
-          with 57% of the popular vote and an electoral college haul of 370 to 161.
-          Due to the stupendously large sample size of their poll, <em>The Literary
-          Digest</em> firmly believed that their poll wan confident to
-          within a fraction of 1% of the true population opinion.
+          The problem with <em>The Literary Digest</em> was that their poll was
+          biased in favor of wealthy, educated citizens (remember, they got their
+          list of potential subjects from car registration forms and telephone
+          directories).  Their actual sample was mainly composed of people who met
+          at least some of the following criteria:
+          <ul>
+            <li>Owned a registered automobile</li>
+            <li>Owned a telephone line</li>
+            <li>Subscribed to magazines</li>
+            <li>Paid dues as a member of certain elite clubs</li>
+            <li>Possessed the time, incentive, and money to mail back a questionnaire</li>
+          </ul>
+        </p>
+        <p>
+          Even though their <em>sample size</em> was humongous, their poll was biased
+          enough to under-represent the amount of pro-Roosevelt sentiment in the
+          poorer segments of the United States.
         </p>
       </div>
     </div>
@@ -96,10 +102,10 @@
                     </md-radio-button>
                   </md-radio-group>
                 </div>
-                <div  ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer == tabCtrl.q1.correct">
+                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer == tabCtrl.q1.correct">
                   <p class="md-display-1 green-bg white-fg p-8">Correct</p>
                 </div>
-                <div  ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer != tabCtrl.q1.correct">
+                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer != tabCtrl.q1.correct">
                   <p class="md-display-1 red-bg white-fg p-8">Wrong</p>
                 </div>
               </div>
@@ -131,15 +137,13 @@
               and find that they are all black.  Then you scoop out two handfuls
               and see that <em>they</em> are all black, too.  The next three
               handfuls are all black again.  Do you see any reason to continue
-              counting beans?  It seems highly unlikely that an further increase
-              in sample size will tell you something you don't already know.
+              counting beans?
             </p>
             <p>
               But what if I told you that you were only scooping out beans from
               the <strong>top</strong> of the bag?  And at the bottom, most of the
               settled beans are red.  In this case, your sample size was large,
-              but it was <strong>biased</strong>.  <em>This</em> problem with
-              sample bias is what doomed <em>The Literary Digest</em>.
+              but it was <strong>biased</strong>.
             </p>
           </div>
         </ms-widget-back>
@@ -148,20 +152,34 @@
       </ms-widget>
       <!-- / QUIZ -->
     </div>
-  </div>
-  <div id="lit-digest-pic" class="extra-sidebar" flex="75" flex-gt-sm="35">
+  </div> <!-- / MAIN PAGE CONTENT -->
 
-      <div class="blurb-box info-box md-whiteframe-1dp">
-        <header class="md-warn-bg md-hue-3" layout="row"
-          layout-align="space-between center">
-          <div class="title">Literary Digest's Follow-Up Issue:</div>
-        </header>
+  <!-- SIDEBAR -->
+  <div class="extra-sidebar" flex="75" flex-gt-md="35">
 
-        <div class="content">
-          <div layout="row" layout-align="space-around center">
-            <img src="assets/images/etc/litdig.gif" height="222">
-          </div>
+    <div id="bias-vocab" class="blurb-box info-box md-whiteframe-1dp">
+      <header class="md-warn-bg md-hue-3" layout="row"
+        layout-align="space-between center">
+        <div class="title">Vocabulary</div>
+        <div class="moe secondary-text">
+          <a target="_blank" href="https://www.ma.utexas.edu/users/mks/statmistakes/biasedsampling.html">
+            Link
+          </a>
         </div>
+      </header>
+
+      <div class="content">
+        <p>
+          A poll tries to make its sample truly <strong>random</strong>.
+        </p>
+        <p>
+          A random sample is one which is free of <strong>bias</strong>.
+        </p>
+        <p>
+          To be biased means <strong>to lean</strong> unfairly in one direction.
+        </p>
       </div>
-  </div>
+    </div>
+  </div> <!-- / SIDEBAR -->
+
 </div>
