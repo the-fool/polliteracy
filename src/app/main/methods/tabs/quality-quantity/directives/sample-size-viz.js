@@ -12,12 +12,14 @@
       restrict: 'E',
       compile: compile,
       controller: sampleSizeController,
-      controllerAs: 'vm'
-      //templateUrl: 'app/main/methods/tabs/quality-quantity/directives/sample-size-viz.html'
+      controllerAs: 'vm',
+      templateUrl: 'app/main/methods/tabs/quality-quantity/directives/sample-size-viz.html'
     };
 
     function sampleSizeController()
     {
+      var vm = this;
+      vm.numSelected = 0;
 
     }
 
@@ -45,9 +47,12 @@
             , width = width - margin.left - margin.right
             , height = 600
             , defaultExtent = [[width/3, height/3], [2*width/3, 2*height/3]];
-          data = d3.range(5000).map(function() {
-              return [Math.random() * width, Math.random() * height];
+          data = d3.range(5000).map(function(value) {
+              var ret = [Math.random() * width, Math.random() * height];
+              ret.type = value % 2 ? "red" : "blue";
+              return ret;
           });
+          console.log(data);
           quadtree = d3.geom.quadtree()
             .extent([[-1,-1], [width+1, height + 1]])
             (data);
@@ -77,8 +82,14 @@
           {
             var extent = brush.extent();
             point.each(function(d) { d.selected = false; });
-            search(quadtree, extent[0][0], extent[0][1], extent[1][0], extent[1][1]);
-            point.classed("selected", function(d) { return d.selected; });
+            scope.$apply(function() {
+              scope.vm.numSelected = 0;
+              search(quadtree, extent[0][0], extent[0][1], extent[1][0], extent[1][1]);
+              point.classed("selected", function(d) {
+                if (d.selected) scope.vm.numSelected++;
+                return d.selected;
+              });
+            });
           }
 
           function search(quadtree, x0, y0, x3, y3)
@@ -102,7 +113,9 @@
              .attr("class", "point")
              .attr("cx", function(d) { return d[0]; })
              .attr("cy", function(d) { return d[1]; })
-             .attr("r", 4);
+             .attr("r", 4)
+             .classed("red", function(d) { return d.type == "red"})
+             .classed("blue", function(d) {return d.type == "blue"});
 
            svg.append("g")
              .attr("class", "brush")

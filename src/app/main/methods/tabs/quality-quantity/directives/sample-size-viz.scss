@@ -4,9 +4,16 @@ sample-size-viz {
     stroke: #fff;
 
     &.selected {
-      fill: red;
       fill-opacity: 1;
       stroke: brown;
+
+      &.red {
+        fill: red;
+      }
+
+      &.blue {
+        fill: blue;
+      }
     }
   }
 
