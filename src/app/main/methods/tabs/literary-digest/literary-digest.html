@@ -2,7 +2,7 @@
 
   <div  class="sample-size" layout="column" flex="100"
     flex-gt-md="65"
-  ng-controller="SampleSizeController as tabCtrl">
+  ng-controller="LiteraryDigestController as tabCtrl">
     <div class="blurb-box general md-whiteframe-1dp">
       <header class="md-accent-bg md-hue-1">
         <div class="title">Are Big Polls Always Good Polls?</div>
@@ -49,8 +49,10 @@
         <p>
           Even if you didn't know this chapter in American history, I bet you
           figured <em>The Literary Digest</em> is not the success of this story.
-          As a matter of fact, Roosevelt won the popular vote with 61%, and swept
-          the electoral college 523 to 8.  This result was about 17% off from
+          As a matter of fact, Roosevelt <em>won</em> the popular vote with 61%,
+          and swept
+          the electoral college <strong>523 to 8</strong>.
+          This result differed by about 17% from
           the magazine's final prediction (not to mention how tight they calculated
           their confidence interval to be).
         </p>
@@ -58,7 +60,10 @@
           While printed questionnaires were being mailed back and forth by the
           <em>The Literary Digest</em>, another pollster was attempting to predict
           the election with a sample of about fifty-thousand people.  This man
-          was George Gallup.
+          was George Gallup.  Where <em>The Literary Digest</em> failed with
+          two-million responses to its poll, Gallup succeed with roughly 0.025%
+          of their sample size!
+        </p>
       </div>
     </div>
 
@@ -68,7 +73,7 @@
         <ms-widget-front class="white-bg">
           <div class="p-16 pb-8 deep-purple-bg white-fg" layout="row" layout-align="space-between center">
             <div class="md-title">
-              How big a sample size is big enough?
+              Sample Size - Again
             </div>
           </div>
 
@@ -100,34 +105,7 @@
               </div>
             </div>
 
-            <div id="q2" ng-show="tabCtrl.q1.userAnswer">
-              <div class="content">
-                <p>
-                  {{tabCtrl.q2.query}}
-                </p>
-              </div>
-              <div layout="row">
-                <div flex="66" flex-xs="50">
-                  <md-radio-group class="md-body-1"
-                    ng-model="tabCtrl.q2.userAnswer">
-                    <md-radio-button
-                      ng-repeat="option in tabCtrl.q2.options track by $index"
-                      value="{{$index}}"
-                      ng-disabled="tabCtrl.isAnswerShown && tabCtrl.q2.userAnswer == tabCtrl.q2.correct">
-                      {{option}}
-                    </md-radio-button>
-                  </md-radio-group>
-                </div>
-                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q2.userAnswer == tabCtrl.q2.correct">
-                  <p class="md-display-1 green-bg white-fg p-8">Correct</p>
-                </div>
-                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q2.userAnswer != tabCtrl.q2.correct">
-                  <p class="md-display-1 red-bg white-fg p-8">Wrong</p>
-                </div>
-              </div>
-            </div>
-
-            <md-button ng-show="tabCtrl.q2.userAnswer && !tabCtrl.isAnswerShown" class="md-warn md-hue-2 grey-bg"
+            <md-button ng-show="tabCtrl.q1.userAnswer && !tabCtrl.isAnswerShown" class="md-warn md-hue-2 grey-bg"
                        ng-click="tabCtrl.isAnswerShown = true">
               Check Answer
             </md-button>
@@ -148,22 +126,18 @@
           </div>
 
           <div layout="column" class="md-subhead pt-20" layout-align="space-around start">
-            <p >
-              Are these sample sizes less than you thought they would be?
+            <p>
+              Imagine you have a large sack of beans.  You scoop out a handful
+              and find that they are all black.  Then you scoop out two handfuls
+              and see that <em>they</em> are all black, too.  The next three
+              handfuls are all black again.  Do you see any reason to continue
+              counting beans?
             </p>
             <p>
-              In each case they are only one-thousand.  But, truth be told, good polls
-              often have sample sizes less than one-thousand!  It turns out that
-              six-hundred is usually good enough for a national poll.
-            </p>
-            <p>
-              Also, note that it does not matter whether the population is ten-million
-              or one-million.  In fact, the simple size of population is not the important
-              factor when determining the size of a poll sample!  The listed percentage for
-              each sample size was meant to be a red herring.
-            </p>
-            <p>
-              We will explain why this is the case in coming modules.
+              But what if I told you that you were only scooping out beans from
+              the <strong>top</strong> of the bag?  And at the bottom, most of the
+              settled beans are red.  In this case, your sample size was large,
+              but it was <strong>biased</strong>.
             </p>
           </div>
         </ms-widget-back>
