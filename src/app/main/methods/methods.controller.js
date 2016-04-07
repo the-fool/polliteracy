@@ -10,12 +10,5 @@
     function MethodsController()
     {
         var vm = this;
-
-        // Data
-        vm.helloText = "methods";
-
-        // Methods
-
-        //////////
     }
 })();

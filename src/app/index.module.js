@@ -24,6 +24,9 @@
             'app.overview',
 
             // Unit 1
-            'app.methods'
+            'app.methods',
+
+            // Lab 1
+            'app.lab-one',
         ]);
 })();
