@@ -1,1 +1,53 @@
-<h1>randamn</h1>
+<div layout="column"  class="quality-quantity" layout-gt-sm="row"
+    ng-controller="QualityQuantityController as tabCtrl">
+
+  <div class="main-page-content" flex="100" flex-gt-md="65">
+    
+
+    <div class="blurb-box general md-whiteframe-1dp">
+      <header class="md-accent-bg md-hue-1">
+        <div class="title">Sample Size Experiment</div>
+      </header>
+
+      <div class="content" id="sample-size-viz-wrapper">
+        <p class="md-body-2">
+          Below is a random scattering of two kinds of dots -- red and blue.
+          The true <strong>population proportion</strong> between the two is
+          50/50.
+        </p>
+        <sample-size-viz></sample-size-viz>
+      </div>
+    </div>
+
+
+  </div> <!-- / MAIN PAGE CONTENT -->
+
+  <!-- SIDEBAR -->
+  <div class="extra-sidebar" flex="75" flex-gt-md="35">
+
+    <div id="bias-vocab" class="blurb-box info-box md-whiteframe-1dp">
+      <header class="md-warn-bg md-hue-3" layout="row"
+        layout-align="space-between center">
+        <div class="title">Vocabulary</div>
+        <div class="moe secondary-text">
+          <a target="_blank" href="https://www.ma.utexas.edu/users/mks/statmistakes/biasedsampling.html">
+            Link
+          </a>
+        </div>
+      </header>
+
+      <div class="content">
+        <p>
+          A poll tries to make its sample truly <strong>random</strong>.
+        </p>
+        <p>
+          A random sample is one which is free of <strong>bias</strong>.
+        </p>
+        <p>
+          To be biased means <strong>to lean</strong> unfairly in one direction.
+        </p>
+      </div>
+    </div>
+  </div> <!-- / SIDEBAR -->
+
+</div>

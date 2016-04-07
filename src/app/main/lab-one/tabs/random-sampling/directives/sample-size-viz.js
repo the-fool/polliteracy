@@ -2,7 +2,7 @@
 {
   'use strict';
 
-  angular.module('app.methods')
+  angular.module('app.lab-one')
     .directive('sampleSizeViz', sampleSizeViz);
 
   /** @ngInject */
@@ -13,7 +13,7 @@
       compile: compile,
       controller: sampleSizeController,
       controllerAs: 'vm',
-      templateUrl: 'app/main/methods/tabs/quality-quantity/directives/sample-size-viz.html'
+      templateUrl: 'app/main/lab-one/tabs/random-sampling/directives/sample-size-viz.html'
     };
 
     function sampleSizeController()
@@ -21,7 +21,7 @@
       var vm = this;
       vm.selected = [];
       vm.numSelected = 0;
-      vm.populationSize = 7000;
+      vm.populationSize = 4000;
     }
 
     function compile(tElement)

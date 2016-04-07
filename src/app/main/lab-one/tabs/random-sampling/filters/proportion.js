@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module("app.methods")
+    .module("app.lab-one")
     .filter("proportion", proportion);
 
   function proportion(selectionPercentFilter) {
