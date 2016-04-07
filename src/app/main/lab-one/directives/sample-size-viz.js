@@ -13,7 +13,7 @@
       compile: compile,
       controller: sampleSizeController,
       controllerAs: 'vm',
-      templateUrl: 'app/main/lab-one/tabs/random-sampling/directives/sample-size-viz.html'
+      templateUrl: 'app/main/lab-one/directives/sample-size-viz.html'
     };
 
     function sampleSizeController()

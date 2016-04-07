@@ -2,7 +2,7 @@
     ng-controller="QualityQuantityController as tabCtrl">
 
   <div class="main-page-content" flex="100" flex-gt-md="65">
-    
+
 
     <div class="blurb-box general md-whiteframe-1dp">
       <header class="md-accent-bg md-hue-1">
@@ -28,9 +28,9 @@
     <div id="bias-vocab" class="blurb-box info-box md-whiteframe-1dp">
       <header class="md-warn-bg md-hue-3" layout="row"
         layout-align="space-between center">
-        <div class="title">Vocabulary</div>
+        <div class="title">Explanation</div>
         <div class="moe secondary-text">
-          <a target="_blank" href="https://www.ma.utexas.edu/users/mks/statmistakes/biasedsampling.html">
+          <a target="_blank" href="https://en.wikipedia.org/wiki/Central_limit_theorem">
             Link
           </a>
         </div>
@@ -38,13 +38,18 @@
 
       <div class="content">
         <p>
-          A poll tries to make its sample truly <strong>random</strong>.
+          What we see with this exercise is an application of the <strong>central limit theorem</strong>.
+          This theorem is what lies behind the famous "bell-curve" of statistics.
         </p>
         <p>
-          A random sample is one which is free of <strong>bias</strong>.
+          It sounds like a mouthful, but it is basically the obvious assertion that with larger and larger
+          sample sizes from the same population, the characteristics of these samples convere on a "central"
+          point.  Each sample can be slightly different from each other, but as they get larger these differences
+          start to vanish.  Hence, there is a "limit" at which those differences finally go down to zero.
         </p>
         <p>
-          To be biased means <strong>to lean</strong> unfairly in one direction.
+          You can experiment with this by making a large box and dragging it around.  Notice that the ratio
+          hardly changes at all with each new sample!
         </p>
       </div>
     </div>
