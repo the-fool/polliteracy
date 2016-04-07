@@ -42,17 +42,41 @@
           , y;
 
         $timeout(function() {
-
+          console.log(attrs);
           margin = {top: 30, right: 20, bottom: 30, left: 20}
             , width = document.getElementsByClassName('main-page-content')[0].offsetWidth
             , width = width - margin.left - margin.right
             , height = 600
             , defaultExtent = [[width/3, height/3], [2*width/3, 2*height/3]];
-          data = d3.range(scope.vm.populationSize).map(function(value) {
+
+          if (attrs.random == "true") {
+            data = d3.range(scope.vm.populationSize).map(function(value) {
+                var ret = [Math.random() * width, Math.random() * height];
+                ret.type = value % 2 ? "red" : "blue";
+                return ret;
+            });
+          }
+          else if (attrs.random == "false")
+          {
+            data = d3.range(scope.vm.populationSize / 2).map(function() {
               var ret = [Math.random() * width, Math.random() * height];
-              ret.type = value % 2 ? "red" : "blue";
+              ret.type = "red";
+              if (ret[0] < width/2 && Math.random() < 0.66) {
+                ret[0] += Math.random() * width / 2;
+              }
               return ret;
-          });
+            });
+            var data2 = d3.range(scope.vm.populationSize / 2).map(function() {
+              var ret = [Math.random() * width, Math.random() * height];
+              ret.type = "blue";
+              if (ret[0] > width/2 && Math.random() < 0.66) {
+                ret[0] -= Math.random() * width / 2;
+              }
+              return ret;
+            });
+
+            data = data.concat(data2);
+          }
 
           quadtree = d3.geom.quadtree()
             .extent([[-1,-1], [width+1, height + 1]])
