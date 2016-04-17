@@ -95,7 +95,7 @@
           }*/
 
           draw();
-        }, 0);
+        }, 0); // end $timeout
 
         function draw()
         {

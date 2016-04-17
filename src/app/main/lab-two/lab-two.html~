@@ -1,0 +1,33 @@
+<div id="lab-two" class="page-layout simple tabbed content-page">
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="start center">
+      <div class="name">Lab Two - Y-Axis</div>
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content" flex>
+
+        <md-tabs md-dynamic-height>
+            <md-tab label="Objectives">
+              <md-content class="objective-tab"
+                ng-include="'app/main/lab-two/tabs/objectives/objectives.html'">
+              </md-content>
+            </md-tab>
+            <md-tab label="Random Sampling">
+                <md-content class="random-data-tab"
+                            ng-include="'app/main/lab-two/tabs/random-sampling/random-sampling.html'">
+                </md-content>
+            </md-tab>
+            <md-tab label="Biased Sampling">
+                <md-content class="non-random-data-tab"
+                            ng-include="'app/main/lab-two/tabs/non-random-data/non-random-data.html'">
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

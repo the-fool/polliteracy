@@ -30,6 +30,10 @@
             'app.lab-one',
 
 	    // Reporting
-	    'app.reporting'
-        ]);
+	    'app.reporting',
+
+	    // Lab 2
+	    'app.lab-two'
+
+	]);
 })();

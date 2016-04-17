@@ -1,0 +1,22 @@
+yaxis-viz {
+.bar {
+     fill: rgb(2,136,209);
+
+     &:hover {
+       fill: rgb(2,136,209);
+     }
+}
+
+.axis {
+      path,
+      line {	
+      	   fill: none;
+	   stroke: #bbb;
+	   shape-rendering: crispEdges;
+     }
+}
+
+
+.x.axis path { 
+    display: none;
+}

@@ -1,0 +1,24 @@
+( function ()
+  {
+      'use strict';
+
+      angular.module('app.lab-two')
+	  .directive('yaxisViz', yaxisVis);
+
+      /** @ngInject */
+      function yaxisViz(d3)
+      {
+	  return
+	  {
+	      restrict: 'E',
+	      compile: compile,
+	      controller: yAxisController,
+	      controllerAs: 'vm',
+	      templateUrl: 'app/main/lab-two/directives/yaxis.html'
+	  };
+
+	  function yAxisController()
+	  {
+	      var vm = this;
+	      vm.axisBase = 0;
+	  }

@@ -1,0 +1,22 @@
+<div id="yaxis-viz">
+    <md-content layout="row" layout-padding>
+    <md-slider-container flex>
+      <md-input-container>
+        <input flex type="number" ng-model="vm.yMin" step="0.01" aria-label="volume" aria-controls="volume-slider">
+      </md-input-container>
+      <md-slider ng-model="vm.yMin" min="0" step="0.01" max="1" aria-label="volume" id="volume-slider" class="md-accent" md-vertical md-range></md-slider>
+      </md-slider>
+      <h5>y-min</h5>
+    </md-slider-container>
+    <md-slider-container flex>
+      <md-input-container>
+        <input flex type="number" step="0.01" ng-model="vm.yMax" aria-label="bass" aria-controls="bass-slider">
+      </md-input-container>
+      <md-slider ng-model="vm.yMax" min="0" step="0.01" max="1" aria-label="bass" class="md-primary"
+                 md-vertical></md-slider>
+      </md-slider>
+      <h5>y-max</h5>
+    </md-slider-container>
+
+  </md-content>
+</div>
