@@ -38,6 +38,8 @@
 		  , yAxis
 		  , svg
 		  , data
+		  , staticMin
+		  , staticMax
 		  ;
 
 		  margin = {
@@ -77,13 +79,17 @@
 			   );
 
 		  data = [];
-		  [0.65, 0.77, 0.81, 0.54, 0.80].forEach(function(cv, i) {
-		      data.push({x: String(i), y: cv});
+		  var dems = ['A','B','C','D','E'];
+		  [0.55, 0.60, 0.66, 0.54, 0.70].forEach(function(cv, i) {
+		      data.push({x: dems[i], y: cv});
 		  });
 
+		  
 		  x.domain(data.map(function(d) {return d.x}));
 		  scope.vm.yMin = 0;
-		  scope.vm.yMax = d3.max(data, (function(d) { return d.y;}));
+		  scope.vm.yMax = 1;
+		  scope.vm.staticMin = d3.min(data, function(d) {return d.y;});
+		  scope.vm.staticMax = d3.max(data, function(d) { return d.y;});
 		  y.domain([scope.vm.yMin, scope.vm.yMax]);
 		  
 		  svg.append("g")
@@ -105,9 +111,10 @@
 			  .attr("y", function(d) { return y(d.y); })
 			  .attr("height", function(d) {return height - y(d.y);});
 		  
-
-		  function update()
+		  
+		  scope.update = function()
 		  {
+		      console.log("here");
 		      
 	              y.domain([scope.vm.yMin, scope.vm.yMax]);
 
@@ -118,8 +125,10 @@
 			  .call(yAxis);
 		      
 		      svg.selectAll(".bar")
+			  .duration(600)
+		      	  .attr("y", function(d) { return y(d.y); })
 			  .attr("height", function(d) {return height - y(d.y);});
-		  }
+		  };
 	      }
 	  }
       }
