@@ -1,1 +1,66 @@
-<h1>non-randamn</h1>
+<div layout="column"  class="quality-quantity" layout-gt-sm="row"
+    ng-controller="QualityQuantityController as tabCtrl">
+
+  <div class="main-page-content" flex="100" flex-gt-md="65">
+
+
+    <div class="blurb-box general md-whiteframe-1dp">
+      <header class="md-accent-bg md-hue-1">
+        <div class="title">Sample Size Experiment, Part 2</div>
+      </header>
+
+      <div class="content" id="sample-size-viz-wrapper">
+        <p class="md-body-2">
+          Here is a second distribution of dots, whose true red-to-blue proprortion
+	  is still 50/50.  However, notice that you need a special technique in
+	  order to make your sample in such a way as to get near the true
+	  ratio of the population.
+        </p>
+        <sample-size-viz random="false"></sample-size-viz>
+      </div>
+    </div>
+
+
+  </div> <!-- / MAIN PAGE CONTENT -->
+
+  <!-- SIDEBAR -->
+  <div class="extra-sidebar" flex="75" flex-gt-md="35">
+
+    <div id="bias-vocab" class="blurb-box info-box md-whiteframe-1dp">
+      <header class="md-warn-bg md-hue-3" layout="row"
+        layout-align="space-between center">
+        <div class="title">Explanation</div>
+        <div class="moe secondary-text">
+          <a target="_blank" href="https://en.wikipedia.org/wiki/Central_limit_theorem">
+            Link
+          </a>
+        </div>
+      </header>
+
+      <div class="content">
+        <p>
+          Notice how much more difficult it is to find a sample which gets near the true
+	  100% ration of blue to red?  This is because our sampling method -- drawing
+	  a rectangle -- is ill-suited to the task of randomly selecting these dots.
+	</p>
+	<p>
+	  It is ill-suited because it only samples dots which are near enough to each
+	  other to be within the boundaries of the rectangle.  Now, in the previous
+	  example, the dots were randomly distributed throughout the field, and so
+	  drawing a rectangle was a perfectly fine approach.  But this time, the dots
+	  are skewed horizontally, with more red dots to the right and more blue to
+	  the left.  
+        </p>
+        <p>
+	  Due to this grouping-up of different kinds of dots, we need to adjust our
+	  methods if we ever hope to catch a representative sample.
+        </p>
+        <p>
+	  Let this serve as a demonstration for how polling methods can significantly
+	  impact their results!
+        </p>
+      </div>
+    </div>
+  </div> <!-- / SIDEBAR -->
+
+</div>
