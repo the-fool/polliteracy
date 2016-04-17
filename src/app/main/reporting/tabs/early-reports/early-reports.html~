@@ -1,5 +1,5 @@
-<div layout="column"  class="quality-quantity" layout-gt-sm="row"
-    ng-controller="QualityQuantityController as tabCtrl">
+<div layout="column"  class="early-reports" layout-gt-sm="row"
+    ng-controller="EarlyReportsController as tabCtrl">
 
   <div class="main-page-content" flex="100" flex-gt-md="65">
     <div class="blurb-box general md-whiteframe-1dp">

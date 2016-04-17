@@ -28,5 +28,8 @@
 
             // Lab 1
             'app.lab-one',
+
+	    // Reporting
+	    'app.reporting'
         ]);
 })();

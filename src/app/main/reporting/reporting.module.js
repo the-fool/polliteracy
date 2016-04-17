@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.methods', [])
+        .module('app.reporting', [])
         .config(config);
 
     /** @ngInject */
@@ -11,21 +11,21 @@
     {
         // State
         $stateProvider
-            .state('app.methods', {
-                url    : '/methods',
+            .state('app.reporting', {
+                url    : '/reporting',
                 views  : {
                     'content@app': {
-                        templateUrl: 'app/main/methods/methods.html',
-                        controller : 'MethodsController as vm'
+                        templateUrl: 'app/main/reporting/reporting.html',
+                        controller : 'OverviewController as vm'
                     }
                 }
             });
 
 
-        msNavigationServiceProvider.saveItem('polliteracy.methods', {
-            title    : 'Methods',
+        msNavigationServiceProvider.saveItem('polliteracy.reporting', {
+            title    : 'Reporting',
             icon     : 'icon-tile-four',
-            state    : 'app.methods',
+            state    : 'app.reporting',
             weight   : 1
         });
 

@@ -15,34 +15,21 @@
 
       vm.q1 =
       {
-        'query'   : "Your population size is 1,000,000. In order to have a " +
-                    "respectable poll, how large should you make your sample size?",
+          'query'   : "Let's say you're responsible for gathering a sample for a " +
+	      "political poll.  You do not want to leave any groups of " +
+	      "people out, which is to say that you want your poll to be random." +
+	      "Which basic method for reaching out to people do you think is " +
+	      "the best way to ensure that your sample " +
+	      "is unbiased?",
+                   
         'options' : [
-            "100 (.01%)",
-            "1,000 (0.1%)",
-            "10,000 (1%)",
-            "100,000 (10%)",
-            "500,000 (50%)"
+            "Interview pedestrians at busy public places",
+            "Call phone numbers selected at random",
+            "Stuff mailboxes with paper questionnaires",
+            "Put the survey online at various popular websites",
         ],
         'correct' : 1,
         'userAnswer' : null
       };
-
-      vm.q2 =
-      {
-        'query' : "Okay.  Now suppose that we have a population 10x bigger.  " +
-                  "If we want a good, useful poll, then how big should the sample size " +
-                  "be for a population of 10,000,000?",
-        'options' :  [
-          "1,000 (0.01%)",
-          "10,000 (0.1%)",
-          "100,000 (1%)",
-          "1,000,000 (10%)",
-          "5,000,000 (50%)"
-        ],
-        'correct'   : 0,
-        'userAnswer': null
-      };
-
     }
 })();

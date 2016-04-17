@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.methods', [])
+        .module('app.reporting', [])
         .config(config);
 
     /** @ngInject */
@@ -16,7 +16,7 @@
                 views  : {
                     'content@app': {
                         templateUrl: 'app/main/methods/methods.html',
-                        controller : 'MethodsController as vm'
+                        controller : 'OverviewController as vm'
                     }
                 }
             });
