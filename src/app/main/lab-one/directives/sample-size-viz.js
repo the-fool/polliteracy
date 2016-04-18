@@ -21,7 +21,7 @@
       var vm = this;
       vm.selected = [];
       vm.numSelected = 0;
-      vm.populationSize = 4000;
+      vm.populationSize = 2500;
     }
 
     function compile(tElement)
