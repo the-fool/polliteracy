@@ -4,10 +4,10 @@
 
     angular
         .module('app.reporting')
-        .controller('EarlyReportsController', EarlyReportsController);
+        .controller('TacticsController', TacticsController);
 
     /** @ngInject */
-    function EarlyReportsController()
+    function TacticsController()
     {
         var vm = this;
 	vm.q1 = {
