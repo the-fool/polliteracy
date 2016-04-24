@@ -1,0 +1,21 @@
+<div layout="row" layout-align="space-around center">
+  <div class="blurb-box single md-whiteframe-5dp" layout="column">
+    <header class="md-accent-bg md-hue-1">
+      <div class="title">Lab Objectives</div>
+    </header>
+
+    <div class="content">
+      <ul class="md-headline objectives">
+        <li>
+	  Experiment with the effect that the placement of the y-axis has on
+	  visualizing a difference in quantity.
+	</li>
+        <li>
+	  Develop a sensitivity for the values on the y-axis and the appearance of
+	  difference between graphical data-points.
+	</li>
+
+      </ul>
+    </div>
+  </div>
+</div>
