@@ -4,10 +4,10 @@
 
     angular
         .module('app.reporting')
-        .controller('CredentialsController', CredentialsController);
+        .controller('YAxisController', YAxisController);
 
     /** @ngInject */
-    function CredentialsController()
+    function YAxisController()
     {
         var vm = this;
 	vm.q1 = {
