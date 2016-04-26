@@ -24,7 +24,7 @@
 
         msNavigationServiceProvider.saveItem('polliteracy.lab_two', {
             title    : 'Lab Two',
-            icon     : 'icon-tile-four',
+            icon     : 'icon-star-outline',
             state    : 'app.lab-two',
             weight   : 1
         });

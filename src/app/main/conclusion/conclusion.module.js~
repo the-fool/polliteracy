@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.lab-one', [])
+        .module('app.conclusion', [])
         .config(config);
 
     /** @ngInject */
@@ -11,21 +11,21 @@
     {
         // State
         $stateProvider
-            .state('app.lab-one', {
-                url    : '/lab-one',
+            .state('app.conclusion', {
+                url    : '/conclusion',
                 views  : {
                     'content@app': {
-                        templateUrl: 'app/main/lab-one/lab-one.html',
+                        templateUrl: 'app/main/conclusion/conclusion.html',
                         controller : 'OverviewController as vm'
                     }
                 }
             });
 
 
-        msNavigationServiceProvider.saveItem('polliteracy.lab_one', {
-            title    : 'Lab One',
-            icon     : 'icon-star-outline',
-            state    : 'app.lab-one',
+        msNavigationServiceProvider.saveItem('polliteracy.conclusion', {
+            title    : 'Conclusion',
+            icon     : 'icon-tile-four',
+            state    : 'app.conclusion',
             weight   : 1
         });
 

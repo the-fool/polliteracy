@@ -24,7 +24,7 @@
 
         msNavigationServiceProvider.saveItem('polliteracy.conclusion', {
             title    : 'Conclusion',
-            icon     : 'icon-tile-four',
+            icon     : 'icon-cake',
             state    : 'app.conclusion',
             weight   : 1
         });
