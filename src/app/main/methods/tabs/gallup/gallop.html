@@ -1,0 +1,139 @@
+<div layout="column" layout-gt-sm="row" >
+
+  <div  class="sample-size" layout="column" flex="100"
+	flex-gt-md="65"
+	ng-controller="GallupController as tabCtrl">
+    
+
+    <div class="blurb-box general md-whiteframe-1dp">
+      <header class="md-accent-bg md-hue-1">
+        <div class="title">Boy, Were They Wrong!</div>
+      </header>
+
+      <div class="content">
+        <p>
+          Even if you didn't know this chapter in American history, I bet you
+          figured <em>The Literary Digest</em> is not the success of this story.
+          As a matter of fact, Roosevelt <em>won</em> the popular vote with 61%,
+          and swept
+          the electoral college <strong>523 to 8</strong>.
+          This result differed by about 17% from
+          the magazine's final prediction (not to mention how tight they calculated
+          their confidence interval to be).
+        </p>
+        <p>
+	  <strong>
+	    With 2,300,000 poll results, <em>Literary Digest</em> predicted that
+	    Lanond would win with an electoral college vote of 370 to 161.  The actual
+	    vote is below, where you can see Landon only receievd 8 votes.
+	  </strong>
+	  <br><br>
+	  <img src="assets/images/etc/1936.png" />
+          While printed questionnaires were being mailed back and forth by the
+          <em>The Literary Digest</em>, another pollster was attempting to predict
+          the election with a sample of about fifty-thousand people.  This man
+          was George Gallup.  Where <em>The Literary Digest</em> failed with
+          two-million responses to its poll, Gallup succeed with roughly 0.025%
+          of their sample size!
+        </p>
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <ms-widget class="mb-75" flippable="true" layout="column" flex="100" flex-gt-xs="75">
+        <!-- Front -->
+        <ms-widget-front class="white-bg">
+          <div class="p-16 pb-8 deep-purple-bg white-fg" layout="row" layout-align="space-between center">
+            <div class="md-title">
+              Sample Size - Again
+            </div>
+          </div>
+
+          <div class="md-body-1 p-16 pb-8" layout="column" layout-align="space-between" flex>
+            <div id="q1">
+              <div class="content">
+                <p>
+                  {{tabCtrl.q1.query}}
+                </p>
+              </div>
+              <div layout="row">
+                <div flex="66" flex-xs="50">
+                  <md-radio-group class="md-body-1"
+                  ng-model="tabCtrl.q1.userAnswer">
+                    <md-radio-button
+                    ng-repeat="option in tabCtrl.q1.options track by $index"
+                    value="{{$index}}"
+                    ng-disabled="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer == tabCtrl.q1.correct">
+                    {{option}}
+                    </md-radio-button>
+                  </md-radio-group>
+                </div>
+                <div  ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer == tabCtrl.q1.correct">
+                  <p class="md-display-1 green-bg white-fg p-8">Correct</p>
+                </div>
+                <div  ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer != tabCtrl.q1.correct">
+                  <p class="md-display-1 red-bg white-fg p-8">Wrong</p>
+                </div>
+              </div>
+            </div>
+
+            <md-button ng-show="tabCtrl.q1.userAnswer && !tabCtrl.isAnswerShown" class="md-warn md-hue-2 grey-bg"
+                       ng-click="tabCtrl.isAnswerShown = true">
+              Check Answer
+            </md-button>
+            <md-button ng-show="tabCtrl.isAnswerShown" class="md-warn md-hue-2 blue-bg"
+                       ng-click="flipWidget()" aria-label="Flip widget">
+              Explanation
+            </md-button>
+          </div>
+        </ms-widget-front>
+        <!-- / Front -->
+
+        <!-- Back -->
+        <ms-widget-back class="p-16 deep-purple-bg white-fg">
+          <div class="flip-to-front">
+            <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+              <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+            </md-button>
+          </div>
+
+          <div layout="column" class="md-subhead pt-20" layout-align="space-around start">
+            <p>
+              Imagine you have a large sack of beans.  You scoop out a handful
+              and find that they are all black.  Then you scoop out two handfuls
+              and see that <em>they</em> are all black, too.  The next three
+              handfuls are all black again.  Do you see any reason to continue
+              counting beans?  It seems highly unlikely that an further increase
+              in sample size will tell you something you don't already know.
+            </p>
+            <p>
+              But what if I told you that you were only scooping out beans from
+              the <strong>top</strong> of the bag?  And at the bottom, most of the
+              settled beans are red.  In this case, your sample size was large,
+              but it was <strong>biased</strong>.  <em>This</em> problem with
+              sample bias is what doomed <em>The Literary Digest</em>.
+            </p>
+          </div>
+        </ms-widget-back>
+        <!-- / Back -->
+
+      </ms-widget>
+      <!-- / QUIZ -->
+    </div>
+  </div>
+  <div id="lit-digest-pic" class="extra-sidebar" flex="75" flex-gt-sm="35">
+
+      <div class="blurb-box info-box md-whiteframe-1dp">
+        <header class="md-warn-bg md-hue-3" layout="row"
+          layout-align="space-between center">
+          <div class="title">Literary Digest's Follow-Up Issue:</div>
+        </header>
+
+        <div class="content">
+          <div layout="row" layout-align="space-around center">
+            <img src="assets/images/etc/litdig.gif" height="222">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

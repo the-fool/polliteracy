@@ -10,5 +10,10 @@
     function MethodsController()
     {
         var vm = this;
+	vm.selectedIndex = 2;
+
+	vm.onTabSelect = function(index) {
+	    console.log(index);
+	};
     }
 })();

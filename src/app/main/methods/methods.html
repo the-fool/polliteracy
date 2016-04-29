@@ -9,8 +9,8 @@
     <!-- CONTENT -->
     <div class="content" flex>
 
-        <md-tabs md-dynamic-height>
-            <md-tab label="Objectives">
+        <md-tabs md-dynamic-height md-selected="vm.selectedIndex">
+            <md-tab label="Objectives" md-on-select="vm.onTabSelect(0)">
               <md-content class="objective-tab"
                 ng-include="'app/main/methods/tabs/objectives/objectives.html'">
               </md-content>
@@ -25,6 +25,12 @@
                             ng-include="'app/main/methods/tabs/literary-digest/literary-digest.html'">
                 </md-content>
             </md-tab>
+            <md-tab label="Gallup 1936">
+                <md-content class="gallup-tab"
+                            ng-include="'app/main/methods/tabs/gallup/gallup.html'">
+                </md-content>
+            </md-tab>
+
             <md-tab label="Quality & Quantity">
                 <md-content class="quality-quantity-tab"
                             ng-include="'app/main/methods/tabs/quality-quantity/quality-quantity.html'">
