@@ -1,0 +1,19 @@
+<div layout="row" layout-align="space-around center">
+  <md-button class="md-raised md-primary p-10"
+	     ng-disabled="vm.activeTab == 0"
+	     ng-click="vm.activeTab = vm.activeTab - 1; vm.scrollUp()">
+    Previous
+  </md-button>
+  <md-button class="md-raised md-primary p-10"
+	     ng-disabled="vm.activeTab == 0"
+	     ng-click="vm.activeTab = 0; vm.scrollUp()">
+
+    Beginning
+  </md-button>
+  
+  <md-button class="md-raised md-primary p-10"
+	     ng-disabled="vm.activeTab == (vm.numTabs - 1)"
+	     ng-click="vm.activeTab = vm.activeTab + 1; vm.scrollUp()">
+    Next
+  </md-button>
+</div>

@@ -1,0 +1,30 @@
+(function() {
+    'use strict';
+
+    angular
+	.module('polliteracy')
+        .directive('tabNavBar', tabNavBar);
+
+    /** @ngInject */
+    function tabNavBar() {
+
+	return {
+	    restrict: 'E',
+	    scope: {
+		activeTab: '=',
+		numTabs: '@'
+	    },
+	    template: `
+		<md-button class="md-raised md-primary">{{vm.activeTab}}</md-button>
+		`,
+	    controller: ctrl,
+	    controllerAs: 'vm',
+	    bindToController: true,
+	    link: function postLink(scope, iElement, iAttrs) {
+		console.log(scope);
+	    }
+
+	}
+
+    }
+})();
