@@ -6,15 +6,14 @@
         .directive('tabNavBar', tabNavBar);
 
     /** @ngInject */
-    function tabNavBar($anchorScroll, $window) {
+    function tabNavBar($document, $timeout) {
 
 	function ctrl() {
 	    var vm = this;
 
 	    vm.scrollUp = function() {
-		var e = document.getElementById("content");
-		e.scrollTop = 0;
-		Ps.update(e);
+		var e = angular.element('#content');
+		angular.element(document.querySelector('#content')).scrollTo(0, 0, 200);
 	    };
 	    vm.$onInit = function() {
 		vm.numTabs = parseInt(vm.numTabs);
