@@ -9,7 +9,7 @@
     <!-- CONTENT -->
     <div class="content" flex>
 
-        <md-tabs md-dynamic-height>
+        <md-tabs md-dynamic-height md-selected="vm.selectedIndex">
             <md-tab label="Objectives">
               <md-content class="objective-tab"
                 ng-include="'app/main/lab-one/tabs/objectives/objectives.html'">
@@ -31,6 +31,9 @@
                 </md-content>
             </md-tab>
         </md-tabs>
+	<div>
+	  <tab-nav-bar active-tab="vm.selectedIndex" num-tabs="4"></tab-nav-bar>
+	</div>
 
     </div>
     <!-- / CONTENT -->

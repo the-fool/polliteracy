@@ -9,7 +9,7 @@
     <!-- CONTENT -->
     <div class="content" flex>
 
-        <md-tabs md-dynamic-height>
+        <md-tabs md-dynamic-height md-selected="vm.selectedIndex">
             <md-tab label="Introduction">
                 <md-content class="introduction-tab"
                             ng-include="'app/main/overview/tabs/introduction/introduction.html'">
@@ -21,6 +21,10 @@
                 </md-content>
             </md-tab>
         </md-tabs>
+	
+	<div>
+	  <tab-nav-bar active-tab="vm.selectedIndex" num-tabs="2"></tab-nav-bar>
+	</div>
     </div>
     <!-- / CONTENT -->
 
