@@ -9,7 +9,7 @@
     <!-- CONTENT -->
     <div class="content" flex>
 
-        <md-tabs md-dynamic-height>
+        <md-tabs md-dynamic-height md-selected="vm.selectedIndex">
             <md-tab label="Objectives">
               <md-content class="objective-tab"
                 ng-include="'app/main/reporting/tabs/objectives/objectives.html'">
@@ -20,18 +20,38 @@
                             ng-include="'app/main/reporting/tabs/early-reports/early-reports.html'">
                 </md-content>
             </md-tab>
+	    <md-tab label="Ethics of Early Reporting">
+                <md-content class="sheer-size-tab"
+                            ng-include="'app/main/reporting/tabs/ethics/ethics.html'">
+                </md-content>
+            </md-tab>
+	    
             <md-tab label="Trustworthy Reporting">
                 <md-content class="trustworthy-1-tab"
                             ng-include="'app/main/reporting/tabs/credentials/credentials.html'">
                 </md-content>
             </md-tab>
+	    <md-tab label="Trustworthy Polling">
+	      <md-content class="trustworthy-2-tab"
+			  ng-include="'app/main/reporting/tabs/sig/sig.html'">
+	      </md-content>
+	    </md-tab>
             <md-tab label="The Y-Axis">
                 <md-content class="y-axis-tab"
                             ng-include="'app/main/reporting/tabs/y-axis/y-axis.html'">
                 </md-content>
             </md-tab>
+	    
+            <md-tab label="The Y-Axis, pt. 2">
+                <md-content class="y-axis-tab"
+                            ng-include="'app/main/reporting/tabs/y-axis2/y-axis2.html'">
+                </md-content>
+            </md-tab>
         </md-tabs>
 
+	<div>
+	  <tab-nav-bar active-tab="vm.selectedIndex" num-tabs="7"></tab-nav-bar>
+	</div>
     </div>
     <!-- / CONTENT -->
 

@@ -1,0 +1,175 @@
+<div layout="column"  class="tactics" layout-gt-sm="row"
+    ng-controller="CredentialsController as tabCtrl">
+
+    <div class="blurb-box general md-whiteframe-1dp">
+      <header class="md-accent-bg md-hue-1">
+        <div class="title">Who to trust?</div>
+      </header>
+
+      <div class="content">
+        <p>
+	  If reporting outlets have a special interest to favor entertainment value
+	  over scientific presentation, does that mean that we ought to shift our
+	  focus from them in favor of polling organizations themselves?  The answer
+	  is not so cut and dry.  In fact, polling organizations are also plagued
+	  by special interests!  Often, a certain group with a bias will <em>sponsor</em>
+	  a poll which is designed to give a "scientific" veneer to the group's
+	  particular prejudice.  They accomplish their goals through a variety of
+	  tactics, most notable of which is phrasing poll-questions in a way to
+	  lead the answerer one way or another.
+        </p>
+	<p>
+	  For example, let's say an environmentalist group is putting together
+	  a poll about about the public opinion of road-side billboards.  And say they
+	  want to influence lawmakers to restrict the placement of these billboards). For
+	  their question they ask:
+	</p>
+	<strong>How do you feel about billboards blocking the scenic views along
+	  America's otherwise pristine routes and highways?
+	</strong>
+	<ul>
+	  <li>Dissapointed</li>
+	  <li>Angry</li>
+	  <li>Frustrated</li>
+	  <li>Content</li>
+	  <li>No opninion</li>
+	</ul>
+	<p>
+	  After conducting this poll on 600 respondents through good randomized phone
+	  dialing, this environmentalist group finds that the vast majority of Americans
+	  are not happy with billboards.  How surprising!  Should we trust this poll?
+	</p>
+      </div>
+    </div>
+    <div class="blurb-box general md-whiteframe-1dp">
+      <header class="md-accent-bg md-hue-1">
+        <div class="title">How to judge for yourself</div>
+      </header>
+
+      <div class="content">
+        <p>
+	  The previous example with the Billboards was a little silly -- but
+	  even a small amount of persuasison in poll questions can skew the results
+	  significantly.  Because biased polling methods and special interest groups
+	  are so common in today's political environment, it is very important to
+	  follow a few basic rules before lending your belief to a certain poll.
+        </p>
+	<p>
+	  When being presented with poll results, always ask yourself whether:
+	  <ul>
+	    <li>Is it clear who paid for the poll?</li>
+	    <li>Does the poll state its methodology?</li>
+	    <li>Does the poll list its exactly worded questions?</li>
+	    <li>Are the margins of error given with the results?</li>
+	    <li>Is that sample size given?</li>
+	  </ul>
+	  If <em>any</em> of these conditions are missing for a poll, then you have
+	  very good reason to be suspicious about its results.
+	</p>
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <ms-widget class="mb-75" flippable="true" layout="column" flex="100" flex-gt-xs="75">
+        <!-- Front -->
+        <ms-widget-front class="white-bg">
+          <div class="p-16 pb-8 deep-purple-bg white-fg" layout="row" layout-align="space-between center">
+            <div class="md-title">
+              Early forecasting
+            </div>
+          </div>
+
+          <div class="md-body-1 p-16 pb-8" layout="column" layout-align="space-between" flex>
+            <div id="q1">
+              <div class="content">
+                <p>
+                  {{tabCtrl.q1.query}}
+                </p>
+              </div>
+              <div layout="row">
+                <div flex="66" flex-xs="50">
+                  <div class="md-body-1"
+		       ng-repeat="option in tabCtrl.q1.options track by $index">
+                    <md-checkbox
+                       ng-click="tabCtrl.toggle($index)">
+                       {{option}}
+                    </md-checkbox>
+                  </div>
+                </div>
+		<div  ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.correct === true">
+                  <p class="md-display-1 green-bg white-fg p-8">Correct!</p>
+                </div>
+		<div  ng-show="tabCtrl.isAnswerShown && (tabCtrl.q1.correct === false)">
+                  <p class="md-display-1 red-bg white-fg p-8">Wrong</p>
+                </div>
+              </div>
+	    </div>
+            <md-button
+	       ng-show="tabCtrl.q1.userAnswer.length && !tabCtrl.isAnswerShown"
+	       class="md-warn md-hue-2 grey-bg"
+               ng-click="tabCtrl.isAnswerShown = true">
+              Check Answer
+            </md-button>
+            <md-button ng-show="tabCtrl.isAnswerShown" class="md-warn md-hue-2 blue-bg"
+                       ng-click="flipWidget()" aria-label="Flip widget">
+              Explanation
+            </md-button>
+          </div>
+        </ms-widget-front>
+        <!-- / Front -->
+
+        <!-- Back -->
+        <ms-widget-back class="p-16 deep-purple-bg white-fg">
+          <div class="flip-to-front">
+            <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+              <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+            </md-button>
+          </div>
+
+          <div layout="column" class="md-subhead pt-20"
+	       layout-align="space-around start">
+            <p>
+	      As ridiculous as they seem, yet <strong>all</strong> of these quotes
+	      were real questions that were used at a large scale in political contests.
+	      The first two were both thanks to Karl Rove and his work for
+	      George W. Bush (first in the race for Governor of Texas and then later
+	      for the Republican candidacy for President).  And the last one
+	      was perpetrated by the victim of Rove -- John McCain himself!  What irony!
+            </p>
+	    <p>
+	      The point of this excercise is to get a sense of the depth to
+	      which pollsters
+	      are willing to sink in order to achieve a <strong>special
+		interest</strong>.  You should always be vigilant and careful with
+	      believing poll results!
+	    </p>
+           </div>
+        </ms-widget-back>
+        <!-- / Back -->
+
+      </ms-widget>
+      <!-- / QUIZ -->
+    </div>
+  </div> <!-- / MAIN PAGE CONTENT -->
+
+  <!-- SIDEBAR -->
+  <div class="extra-sidebar" flex="75" flex-gt-md="35">
+
+    <div id="bias-vocab" class="blurb-box info-box md-whiteframe-1dp">
+      <header class="md-warn-bg md-hue-3" layout="row"
+        layout-align="space-between center">
+        <div class="title">Sponsored Polls</div>
+        <div class="more secondary-text">
+
+	</div>
+      </header>
+
+      <div class="content">
+        <p>
+	 <img src="assets/images/etc/bias.jpg">
+	</p>
+      </div>
+    </div>
+  </div> <!-- / SIDEBAR -->
+
+</div>
