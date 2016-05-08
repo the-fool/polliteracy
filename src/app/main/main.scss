@@ -1,35 +1,21 @@
-
 .content-page {
-
     .header {
-
         .name {
             font-size: 34px;
             color: #FFFFFF;
         }
-
     }
-
     .content {
-
         md-content {
             background-color: transparent;
         }
     }
     .main-page-content {
-  /*    max-width: 800px;
-      width: 65%;
-*/
     }
     .extra-sidebar {
         padding: 8px 8px 8px 32px;
-
-
         .groups {
-
             .content {
-
-
             }
         }
     }
@@ -37,22 +23,20 @@
     .blurb-box {
         margin-bottom: 16px;
 
-        header {
+	header {
             padding: 16px;
-
             .title {
-                font-size: 17px;
+                font-size: 22px;
             }
-
             .more {
                 cursor: pointer;
             }
         }
-
+	
         .content {
             padding: 16px;
             background-color: #FFF;
-            font-size: 15px;
+            font-size: 20px;
         }
 
         footer {

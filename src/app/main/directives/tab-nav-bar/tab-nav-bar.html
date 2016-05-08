@@ -1,19 +1,35 @@
 <div layout="row" layout-align="space-around center">
   <md-button class="md-raised md-primary p-10"
+	     ng-if="vm.activeTab != 0"
 	     ng-disabled="vm.activeTab == 0"
 	     ng-click="vm.activeTab = vm.activeTab - 1; vm.scrollUp()">
-    Previous
+    Back
   </md-button>
+  <md-button class="md-raised md-accent p-10"
+	     ng-if="vm.activeTab == 0"
+	     ng-disabled="vm.currentStateIdx == 0"
+	     ng-click="vm.nextChapter(); vm.scrollUp()">
+    Previous Chapter
+  </md-button>
+
   <md-button class="md-raised md-primary p-10"
 	     ng-disabled="vm.activeTab == 0"
+	     ng-if="false"
 	     ng-click="vm.activeTab = 0; vm.scrollUp()">
 
     Beginning
   </md-button>
   
   <md-button class="md-raised md-primary p-10"
+	     ng-if="vm.activeTab < (vm.numTabs - 1)"
 	     ng-disabled="vm.activeTab == (vm.numTabs - 1)"
 	     ng-click="vm.activeTab = vm.activeTab + 1; vm.scrollUp()">
     Next
+  </md-button>
+  <md-button class="md-raised md-accent p-10"
+	     ng-if="vm.activeTab == (vm.numTabs - 1)"
+	     ng-disabled="vm.activeTab == vm.maxTab"
+	     ng-click="vm.nextChapter(); vm.scrollUp()">
+    Next Chapter
   </md-button>
 </div>

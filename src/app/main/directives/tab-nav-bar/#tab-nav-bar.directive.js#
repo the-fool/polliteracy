@@ -12,6 +12,13 @@
 	    var vm = this;
 
 	    vm.states = msNavigationService.getNavigationObject()[0].children;
+	    vm.currentStateIdx = (function() {
+		for (var i = 0; i < vm.states.length; i++) {
+		    if (vm.state[i].state === $state.current.name)
+			return i;
+		}
+	    })();
+	    
 	    vm.scrollUp = function() {
 		var e = angular.element('#content');
 		angular.element(document.querySelector('#content')).scrollTo(0, 0, 200);
