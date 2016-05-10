@@ -20,6 +20,14 @@
         }
     }
 
+    ms-widget {
+	ms-widget-back,
+	ms-widget-front {
+	    .md-body-1 {
+		font-size: 16px;
+	    }
+	}
+    }
     .blurb-box {
         margin-bottom: 16px;
 
@@ -36,8 +44,14 @@
         .content {
             padding: 16px;
             background-color: #FFF;
-            font-size: 20px;
-        }
+            font-size: 18px;
+
+	    &.smaller {
+		font-size: 14px;
+	    }
+	}
+	
+	
 
         footer {
             padding: 8px;

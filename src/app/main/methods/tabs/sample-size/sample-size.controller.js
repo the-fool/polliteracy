@@ -15,8 +15,10 @@
 
       vm.q1 =
       {
-        'query'   : "Your population size is 1,000,000. In order to have a " +
-                    "respectable poll, how large should you make your sample size?",
+          'query'   : "Let's try guessing how large a sample size needs to be to" +
+	      " give us a high-quality poll.  Assume your population size is" +
+	      " 1,000,000. In order to have a " +
+              "good poll, how large should you make your sample size?",
         'options' : [
             "100 (.01%)",
             "1,000 (0.1%)",
