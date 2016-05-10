@@ -35,7 +35,11 @@
                             ng-include="'app/main/methods/tabs/literary-digest-2/literary-digest-2.html'">
                 </md-content>
             </md-tab>
-           
+	    <md-tab label="Literary Digest Quiz">
+                <md-content class="literary-digest-quiz-tab"
+                            ng-include="'app/main/methods/tabs/lit-dig-quiz/lit-dig-quiz.html'">
+                </md-content>
+            </md-tab>
 	    <md-tab label="Gallup 1936">
                 <md-content class="gallup-tab"
                             ng-include="'app/main/methods/tabs/gallup/gallup.html'">
@@ -49,7 +53,7 @@
             </md-tab>
         </md-tabs>
 	<div>
-	  <tab-nav-bar active-tab="vm.selectedIndex" num-tabs="6"></tab-nav-bar>
+	  <tab-nav-bar active-tab="vm.selectedIndex" num-tabs="8"></tab-nav-bar>
 	</div>
 
     </div>

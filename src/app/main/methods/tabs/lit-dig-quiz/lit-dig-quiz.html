@@ -2,7 +2,7 @@
 
   <div  class="sample-size" layout="column" flex="100"
 	flex-gt-md="65"
-	ng-controller="SampleSizeController as tabCtrl">
+	ng-controller="LitDigQuizController as tabCtrl">
     
     <div layout="row" layout-align="center center">
       <ms-widget class="mb-75" flippable="true" layout="column" flex="100" flex-gt-xs="75">
@@ -42,34 +42,7 @@
               </div>
             </div>
 
-            <div id="q2" ng-show="tabCtrl.q1.userAnswer">
-              <div class="content">
-                <p>
-                  {{tabCtrl.q2.query}}
-                </p>
-              </div>
-              <div layout="row">
-                <div flex="66" flex-xs="50">
-                  <md-radio-group class="md-body-1"
-                    ng-model="tabCtrl.q2.userAnswer">
-                    <md-radio-button
-                      ng-repeat="option in tabCtrl.q2.options track by $index"
-                      value="{{$index}}"
-                      ng-disabled="tabCtrl.isAnswerShown && tabCtrl.q2.userAnswer == tabCtrl.q2.correct">
-                      {{option}}
-                    </md-radio-button>
-                  </md-radio-group>
-                </div>
-                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q2.userAnswer == tabCtrl.q2.correct">
-                  <p class="md-display-1 green-bg white-fg p-8">Correct</p>
-                </div>
-                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q2.userAnswer != tabCtrl.q2.correct">
-                  <p class="md-display-1 red-bg white-fg p-8">Wrong</p>
-                </div>
-              </div>
-            </div>
-
-            <md-button ng-show="tabCtrl.q2.userAnswer && !tabCtrl.isAnswerShown" class="md-warn md-hue-2 grey-bg"
+            <md-button ng-show="tabCtrl.q1.userAnswer && !tabCtrl.isAnswerShown" class="md-warn md-hue-2 grey-bg"
                        ng-click="tabCtrl.isAnswerShown = true">
               Check Answer
             </md-button>
@@ -91,22 +64,15 @@
 
           <div layout="column" class="md-subhead pt-20" layout-align="space-around start">
             <p >
-              Are these sample sizes less than you thought they would be?
+	      The issue has little or nothing to do with the poll's <em>size</em>.
+	      The method The Literary Digest used was flawed.  In fact, making their
+	      poll so large might have <em>amplified</em> the effect that bad methodology
+	      had on their poll results.
             </p>
-            <p>
-              In each case they are only one-thousand.  But, truth be told, good polls
-              often have sample sizes less than one-thousand!  It turns out that
-              six-hundred is usually good enough for a national poll.
-            </p>
-            <p>
-              Also, note that it does not matter whether the population is ten-million
-              or one-million.  In fact, the simple size of population is not the important
-              factor when determining the size of a poll sample!  The listed percentage for
-              each sample size was meant to be a red herring.
-            </p>
-            <p>
-              We will explain why this is the case in coming modules.
-            </p>
+	    <p>
+	      What we will explore is the fact that their poll was <em>biased</em>, and
+	      their sample was not therefore sufficiently <em>random</em>.
+	      </p>
           </div>
         </ms-widget-back>
         <!-- / Back -->
@@ -121,19 +87,12 @@
     <div class="blurb-box info-box md-whiteframe-1dp">
       <header class="md-warn-bg md-hue-3" layout="row"
         layout-align="space-between center">
-        <div class="title">Vocabulary</div>
-        <div class="more secondary-text">
-          <a target="_blank" href="http://stattrek.com/sampling/populations-and-samples.aspx">External Resources Link</a>
-        </div>
+        <div class="title">Thoughts</div>
       </header>
 
       <div class="content">
-        <div class="info-line">
-          <div class="title">Population:</div>
-          <div class="content">Everyone to whom a poll applies.</div>
-          <div class="title">Sample:</div>
-          <div class="content">The portion of a population which is actually polled.</div>
-        </div>
+        The Literary Digest polled 11 million people, with 2.3 million responses.  Yet,
+	their poll results were very far from accurate.  Why?
       </div>
     </div>
   </div>
