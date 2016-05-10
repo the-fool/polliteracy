@@ -21,20 +21,31 @@
 	    
 	    function nextChapter() {
 		for (var i = 0; i < vm.states.length; i++) {
-		    if (vm.states[i].state === $state.current.name)
+		    if (vm.states[i].state === $state.current.name) {
 			$state.go(vm.states[i + 1].state);
+			break;
+		    }
 		}
 	    }
 	    
 	    function previousChapter() {
+		console.log("prev");
 		for (var i = 0; i < vm.states.length; i++) {
-		    if (vm.states[i].state === $state.current.name)
+		    if (vm.states[i].state === $state.current.name) {
 			$state.go(vm.states[i - 1].state);
+			break;
+		    }
 		}
 	    }
 	    
 	    vm.$onInit = function() {
 		vm.numTabs = parseInt(vm.numTabs);
+		for (var i = 0; i < vm.states.length; i++) {
+		    if (vm.states[i].state === $state.current.name) {
+			vm.currentStateIdx = i;
+			break;
+		    }
+		}
 	    };
 	}
 	
