@@ -1,0 +1,101 @@
+<div layout="column" layout-gt-sm="row" >
+
+  <div  class="sample-size" layout="column" flex="100"
+    flex-gt-md="65"
+  ng-controller="LiteraryDigestController as tabCtrl">
+    <div class="blurb-box general md-whiteframe-1dp">
+      <header class="md-accent-bg md-hue-1">
+        <div class="title">Are Big Polls Always Good Polls?</div>
+      </header>
+
+      <div class="content">
+        <p>
+          In the presidential election of 1936, the incumbent Franklin Delano Roosevelt
+          was challenged by the Republican governor Alfred Landon.  At that time,
+          a popular magazine <em>The Literary Digest</em> had the reputation of
+          conducting large-scale public opinion polls.  Over the years it had put
+          together a list of people to poll through collecting information from
+          phonebooks, magazine subscriptions, automobile registrations, and
+          various club roster lists.
+          By the time <em>The Literary Digest</em> was ready to poll the nation about the
+          1936 election, its list of contact information exceeded <strong>eleven-million</strong>
+          entries!
+        </p>
+        <p>
+          And so the magazine mailed its 11,000,000 questionnaires around the
+          country.  Everyone who received this in the mail was asked to mark
+          their intention to vote for either Roosevelt or Landon, and then mail
+          it back to <em>The Literary Digest</em> headquarters. As you would guess,
+          many people did not bother the trouble or the postage to return their
+          survey -- but those who did numbered over 2,300,000!  This poll became
+          one of the largest in history.
+        </p>
+        <p>
+          The results were published a month before the election:
+	  <strong>Landon would win
+          with 57% of the popular vote and an electoral college haul of 370 to 161.</strong>
+          Due to the stupendously large sample size of their poll, <em>The Literary
+          Digest</em> firmly believed that their poll wan confident to
+          within a fraction of 1% of the true population opinion.
+        </p>
+      </div>
+    </div>
+
+    <div class="blurb-box general md-whiteframe-1dp">
+      <header class="md-accent-bg md-hue-1">
+        <div class="title">Boy, Were They Wrong!</div>
+      </header>
+
+      <div class="content">
+        <p>
+          Even if you didn't know this chapter in American history, I bet you
+          figured <em>The Literary Digest</em> is not the success of this story.
+          As a matter of fact, Roosevelt <em>won</em> the popular vote with 61%,
+          and swept
+          the electoral college <strong>523 to 8</strong>.
+          This result differed by about 17% from
+          the magazine's final prediction (not to mention how tight they calculated
+          their confidence interval to be).
+        </p>
+        <p>
+	  <strong>
+	    With 2,300,000 poll results, <em>Literary Digest</em> predicted that
+	    Lanond would win with an electoral college vote of 370 to 161.  The actual
+	    vote is below, where you can see Landon only receievd 8 votes.
+	  </strong>
+	  <br><br>
+	  <img src="assets/images/etc/1936.png" />
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="lit-digest-pic" class="extra-sidebar" flex="75" flex-gt-sm="35">
+
+      <div class="blurb-box info-box md-whiteframe-1dp">
+        <header class="md-warn-bg md-hue-3" layout="row"
+          layout-align="space-between center">
+          <div class="title">Roosevelt and Landon</div>
+        </header>
+
+        <div class="content">
+          <div layout="row" layout-align="space-around center">
+            <img src="assets/images/etc/rooslandon.jpg" height="222">
+          </div>
+        </div>
+      </div>
+    
+      <div class="blurb-box info-box md-whiteframe-1dp">
+        <header class="md-warn-bg md-hue-3" layout="row"
+          layout-align="space-between center">
+          <div class="title">Literary Digest's Follow-Up Issue:</div>
+        </header>
+
+        <div class="content">
+          <div layout="row" layout-align="space-around center">
+            <img src="assets/images/etc/litdig.gif" height="222">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
