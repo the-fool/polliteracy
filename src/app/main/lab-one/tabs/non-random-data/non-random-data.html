@@ -10,12 +10,44 @@
       </header>
 
       <div class="content" id="sample-size-viz-wrapper">
-        <p class="md-body-2">
+        <p>
           Here is a second distribution of dots, whose true red-to-blue proprortion
-	  is still 50/50.  However, notice that you need a special technique in
+	  is still 1/1 (100%).  However,
+	  <strong>their distribution is not random</strong>.
+	</p>
+	<p>
+	  Notice that you need a <em>special technique</em> with your sampling in
 	  order to make your sample in such a way as to get near the true
-	  ratio of the population.
+	  ratio of the population (100%).
         </p>
+	<p>
+	  Instructions:
+	  <ol>
+	    <li>
+	      Begin with drawing a random rectangle across the dots
+	    </li>
+	    <li>
+	      Click and drag the rectangle, making numerous additional samples
+	    </li>
+	    <li>
+	      Note how your sample's accuracy varies wildly depending on where in
+	      the population you make your sample
+	    </li>
+	    <li>
+	      Observe that your sample is <strong>not random</strong>.  The colors
+	      are <em>clustered</em>, and a rectangle only captures nearby neighbors
+	    </li>
+	    <li>
+	      Try to develop a sampling technique (drawing a rectangle) that
+	      accounts for the clustering of colors, and thus achieves an accurate
+	      sample (hint: symmetry is important)
+	    </li>
+	    <li>
+	      Success!  You now have a hands-on experience with <em>biased</em>
+	      sampling methods!
+	    </li>
+	  </ol>
+	</p>
         <sample-size-viz random="false"></sample-size-viz>
       </div>
     </div>

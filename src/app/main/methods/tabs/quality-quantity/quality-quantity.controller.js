@@ -12,7 +12,32 @@
       var vm = this;
 
       vm.isAnswerShown = false;
+	vm.q2 = {
+	    options: [
+		'Owned a registered automobile',
+		'Owned a telephone line',
+		'Subscribed to magazines',
+		'Paid dues as a member of certain elite clubs',
+		'Possessed the time, incentive, and money to mail back a questionnaire'
+	    ],
+	    selections: [],
+	    isCorrect: false
+	};
+	vm.toggle = function (item, selected) {
+	    var i = vm.q2.selections.indexOf(item);
+	    if (i > -1) {
+		vm.q2.selections.splice(i,1);
+	    } else {
+		vm.q2.selections.push(item);
+	    }
 
+	    if (vm.q2.selections.length === vm.q2.options.length) {
+		vm.q2.isCorrect = true;
+	    } else {
+		vm.q2.isCorrect = false;
+	    }
+		
+	};
       vm.q1 =
       {
           'query'   : "Let's say you're responsible for gathering a sample for a " +

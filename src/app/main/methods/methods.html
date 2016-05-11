@@ -51,9 +51,15 @@
                             ng-include="'app/main/methods/tabs/quality-quantity/quality-quantity.html'">
                 </md-content>
             </md-tab>
+	    <md-tab label="Unbiased Sampling">
+                <md-content class="quality-quantity-tab"
+                            ng-include="'app/main/methods/tabs/unbiased/unbiased.html'">
+                </md-content>
+            </md-tab>
+
         </md-tabs>
 	<div>
-	  <tab-nav-bar active-tab="vm.selectedIndex" num-tabs="8"></tab-nav-bar>
+	  <tab-nav-bar active-tab="vm.selectedIndex" num-tabs="9"></tab-nav-bar>
 	</div>
 
     </div>

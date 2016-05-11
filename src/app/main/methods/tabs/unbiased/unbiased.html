@@ -9,71 +9,69 @@
 
       <div class="content">
         <p>
-	  The reason <em>The Literary Digest</em> predicted incorrect results
-          is that same for why Gallup predicted correctly.  The issue at stake here
-          is what we call <strong>sample bias</strong>.
-        </p>
+          The problem with <em>The Literary Digest</em> was that their poll was
+          biased in favor of wealthy, educated citizens (remember, they got their
+          list of potential subjects from car registration forms and telephone
+          directories).  Their actual sample was mainly composed of people from a
+	  select demographic.
         <p>
-          A sample is biased if it leans in one direction, favoring certain results.
-          This unfair lean means the poll does not represent a genuinely
-	  <em>random</em> (or unbiased) segment of the population.
-	</p>
-	<p>
-	  If a poll sample only gets responses
-          from a specific <strong>type</strong> of member of some population,
-          then it does not matter whether the sample size is one-thousand or one-million
-          -- whether the sample is large or small, it will still be
-	  unrepresentative of the population
-          as a whole.
+          Even though their <em>sample size</em> was humongous, their poll was biased
+          enough to under-represent the amount of pro-Roosevelt sentiment in the
+          poorer segments of the United States.
+	  Their poll was not <strong>random</strong>, and so they made their prediction
+	  on an unfair, or biased, slice of American voters.
         </p>
       </div>
     </div>
 
 
     <div layout="row" layout-align="center center">
-      <ms-widget class="mb-75" flippable="true" layout="column" flex="100" flex-gt-xs="75">
+      <ms-widget class="mb-75"
+		 flippable="true"
+		 layout="column"
+		 flex="100"
+		 flex-gt-xs="75">
         <!-- Front -->
         <ms-widget-front class="white-bg">
           <div class="p-16 pb-8 deep-purple-bg white-fg" layout="row" layout-align="space-between center">
             <div class="md-title">
-              Literary Digest's <strong>Bias</strong>
+              21st Century Unbiased Sampling
             </div>
           </div>
 
           <div class="md-body-1 p-16 pb-8" layout="column" layout-align="space-between" flex>
             <div id="q1">
               <div class="content">
-		<p>
-		  How biased was The Literary Digest's poll?
-		</p>
                 <p>
-                  The sample for their poll was composed of people
-		  who fit at least one of <em>which</em> following categories.
-		  Select all that apply:
+                  {{tabCtrl.q1.query}}
                 </p>
               </div>
               <div layout="row">
                 <div flex="66" flex-xs="50">
-                  <div ng-repeat="option in tabCtrl.q2.options">
-		    <md-checkbox ng-click="tabCtrl.toggle(option)">
-		      {{ option }}
-		    </md-checkbox>
-		  </div>
+                  <md-radio-group class="md-body-1"
+                  ng-model="tabCtrl.q1.userAnswer">
+                    <md-radio-button
+                    ng-repeat="option in tabCtrl.q1.options track by $index"
+                    value="{{$index}}"
+                    ng-disabled="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer == tabCtrl.q1.correct">
+                    {{option}}
+                    </md-radio-button>
+                  </md-radio-group>
                 </div>
-                <div class="mt-20" ng-show="tabCtrl.q2.selections && tabCtrl.q2.isCorrect">
+                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer == tabCtrl.q1.correct">
                   <p class="md-display-1 green-bg white-fg p-8">Correct</p>
                 </div>
-                <div class="mt-20" ng-show="tabCtrl.q2.isAnswerShown && !tabCtrl.q2.isCorrect">
+                <div class="mt-20" ng-show="tabCtrl.isAnswerShown && tabCtrl.q1.userAnswer != tabCtrl.q1.correct">
                   <p class="md-display-1 red-bg white-fg p-8">Wrong</p>
                 </div>
               </div>
             </div>
 
-            <md-button ng-show="tabCtrl.q2.selections && !tabCtrl.q2.isAnswerShown" class="md-warn md-hue-2 grey-bg"
-                       ng-click="tabCtrl.q2.isAnswerShown = true">
+            <md-button ng-show="tabCtrl.q1.userAnswer && !tabCtrl.isAnswerShown" class="md-warn md-hue-2 grey-bg"
+                       ng-click="tabCtrl.isAnswerShown = true">
               Check Answer
             </md-button>
-            <md-button ng-show="tabCtrl.q2.isAnswerShown" class="md-warn md-hue-2 blue-bg"
+            <md-button ng-show="tabCtrl.isAnswerShown" class="md-warn md-hue-2 blue-bg"
                        ng-click="flipWidget()" aria-label="Flip widget">
               Explanation
             </md-button>
@@ -91,11 +89,19 @@
 
           <div layout="column" class="md-subhead pt-20" layout-align="space-around start">
             <p>
-              All of these categories is the correct answer!  Everyone in <em>The
-		Literary Digest's</em> poll fit into at least one of these categories.
-	      Can you see how this would leave out of account large groups of Americans?
-	      Remember that back in 1936, not everyone could afford telephones or
-	      automobiles.
+              The best answer, out of the options provided, is to call phone numbers
+	      selected at random.  Now, each of these options are biased in their own
+	      ways, but scientists generally agree that random dialing is yet the
+	      least biased of the bunch.
+            </p>
+            <p>
+	      First, interviewing random pedestrians at public places limits the sample
+	      to those kinds of people which have a reason to be out walking at that
+	      place.  Second, mailboxes may be more universal than telephones, but
+	      the problem is that only certain sorts of people decide to put in the
+	      effort to return mailed questionnaires. Lastly, an online survey
+	      is restricted to those who visit the websites in question, which is a
+	      small segment of the portion of the population that surfs the Web.
 
             </p>
           </div>
@@ -104,7 +110,6 @@
 
       </ms-widget>
       <!-- / QUIZ -->
-
     </div>
   </div> <!-- / MAIN PAGE CONTENT -->
 
@@ -117,7 +122,7 @@
         <div class="title">Vocabulary</div>
         <div class="moe secondary-text">
           <a target="_blank" href="https://www.ma.utexas.edu/users/mks/statmistakes/biasedsampling.html">
-           External Resources Link
+            Link
           </a>
         </div>
       </header>
@@ -134,18 +139,6 @@
         </p>
       </div>
     </div>
-
-        <div id="bias-vocab" class="blurb-box info-box md-whiteframe-1dp">
-      <header class="md-warn-bg md-hue-3" layout="row"
-        layout-align="space-between center">
-        <div class="title">Randomized, Unbiased Sample</div>
-      </header>
-
-      <div class="content">
-	<img src="assets/images/etc/rand-samp.gif">
-      </div>
-    </div>
-
   </div> <!-- / SIDEBAR -->
 
 </div>
