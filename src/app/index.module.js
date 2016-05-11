@@ -29,11 +29,11 @@
             // Lab 1
             'app.lab-one',
 
-	    // Reporting
-	    'app.reporting',
+	    // Reporting 
+//	    'app.reporting',
 
 	    // Lab 2
-	    'app.lab-two',
+//	    'app.lab-two',
 
 	    // Conclusion
 	    'app.conclusion'
